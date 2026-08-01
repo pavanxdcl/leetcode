@@ -2,7 +2,7 @@ class Solution:
     def halvesAreAlike(self, s: str) -> bool:
         c=0
         count=0
-        v=['a','e','i','o','u','A','E','I','O','U']
+        v=set(['a','e','i','o','u','A','E','I','O','U'])
         for i in s:
             if i in v and count<=(len(s)//2)-1:
                 c=c+1
