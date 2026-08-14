@@ -1,14 +1,13 @@
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        h={}
+        s=set()
+        sum=0
 
         for i in nums:
-            if i in h.keys():
-                h[i]=h[i]+1
+            if i in s:
+                sum=sum-i
+                s.remove(i)
             else:
-                h[i]=1
-        
-        for i in h.keys():
-            if h[i]==1:
-                return i
-        
+                sum=sum+i
+                s.add(i)
+        return sum
